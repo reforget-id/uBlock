@@ -3,8 +3,6 @@ sudo: false
 env:
   matrix:
   - BROWSER=chromium EXT=zip
-  - BROWSER=firefox EXT=xpi
-  - BROWSER=thunderbird EXT=xpi
 script: "./tools/make-${BROWSER}.sh ${TRAVIS_TAG}"
 deploy:
   provider: releases
@@ -14,6 +12,6 @@ deploy:
   file: dist/build/uBlock0_${TRAVIS_TAG}.${BROWSER}.${EXT}
   skip_cleanup: true
   on:
-    repo: gorhill/uBlock
+    repo: reforget-id/uBlock-Kiwi
     tags: true
     all_branches: true
